@@ -1,0 +1,22 @@
+name: "Create AppImage"
+description: "Create AppImage from existing directory that follows AppDir spec"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Prepare | Download appimagetool
+      shell: sh
+      run: |
+        wget -nv -c https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        chmod +x appimagetool-x86_64.AppImage
+
+    - name: Prepare | List app dir
+      shell: sh
+      run: ls -l ./desktop/target/app-dir
+
+    - name: Package | Run appimagetool
+      shell: sh
+      run: |
+        ARTIFACT_NAME=$(grep "artifactName" ./desktop/target/package-scripts/build.properties | cut -d'=' -f2)
+        ARCH=x86_64 ./appimagetool-x86_64.AppImage -v ./desktop/target/app-dir "$ARTIFACT_NAME.AppImage"
+        mv "$ARTIFACT_NAME.AppImage" ./desktop/target/release/

@@ -1,0 +1,23 @@
+name: "Install WiX toolset"
+description: "Download and install WiX toolset"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Download WiX
+      uses: i3h/download-release-asset@v1
+      with:
+        owner: wixtoolset
+        repo: wix3
+        tag: wix3112rtm
+        file: wix311-binaries.zip
+
+    - name: Decompress WiX
+      uses: DuckSoft/extract-7z-action@v1.0
+      with:
+        pathSource: wix311-binaries.zip
+        pathTarget: ./target/wix
+
+    - name: Add WiX to the $PATH
+      shell: pwsh
+      run: echo "$HOME/target/wix" >> $GITHUB_PATH

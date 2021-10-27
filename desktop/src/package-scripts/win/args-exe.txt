@@ -1,0 +1,8 @@
+--type exe
+--app-image "${build.package.appImageDir}\\${app.name}"
+--dest "${project.build.directory}"
+--vendor "${build.windows.vendor}"
+--win-menu
+--win-menu-group "${build.windows.vendor}"
+--win-dir-chooser
+--win-upgrade-uuid "${build.windows.uuid}"

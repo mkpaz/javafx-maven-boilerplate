@@ -1,0 +1,4 @@
+--type rpm
+--app-image "${build.package.appImageDir}/${app.name}"
+--dest "${project.build.directory}"
+--linux-shortcut

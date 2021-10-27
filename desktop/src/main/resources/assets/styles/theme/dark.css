@@ -1,0 +1,12 @@
+.root {
+    -fx-base: rgb(39,40,34);
+    -fx-accent: rgb(166,226,46);
+    -fx-focus-color: -fx-accent;
+
+    -fx-control-inner-background: derive(-fx-base, 35%);
+    -fx-control-inner-background-alt: -fx-control-inner-background;
+
+    -fx-light-text-color: rgb(220,220,220);
+    -fx-mid-text-color: rgb(100,100,100);
+    -fx-dark-text-color: rgb(20,20,20);
+}

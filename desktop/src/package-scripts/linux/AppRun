@@ -1,0 +1,5 @@
+#!/bin/sh
+SELF=$(readlink -f "$0")
+HERE=${SELF%/*}
+export PATH="${HERE}/bin/:${HERE}/lib/runtime/bin/"
+exec ${app.name} "$@"
