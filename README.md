@@ -59,8 +59,7 @@ After that use you IDE to connect to the JVM via run configuration for remote de
 
 ## Github Actions
 
-To issue a new release create a tag that matches `v*` and push it into remote repository. Check the [workflow](.
-github/workflows/tagged-release.yml) for details. Note that it uses your [changelog](CHANGELOG.md) to generate release notes, so don't forget to update it.
+To issue a new release create a tag that matches `v*` and push it into remote repository. Check the [workflow](.github/workflows/tagged-release.yml) for details. Note that it uses your [changelog](CHANGELOG.md) to generate release notes, so don't forget to update it.
 
 Also don't forget to update the workflow if you want to rename the desktop module.
 
