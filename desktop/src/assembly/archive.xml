@@ -12,6 +12,8 @@
     <fileSets>
         <fileSet>
             <directory>${build.package.appImageDir}/${app.name}</directory>
+            <outputDirectory>/</outputDirectory>
+            <filtered>false</filtered>
         </fileSet>
     </fileSets>
 
